@@ -1,6 +1,6 @@
-# Interneting Is Hard - CSS Box Model
+# Interneting Is Hard - Semantic HTML
 
-This is a solution to the [CSS Box Model tutorial No. 5 of HTML & CSS Is Hard](https://www.internetingishard.com/html-and-css/css-box-model/).
+This is a solution to the [Semantic HTML tutorial No. 12 of HTML & CSS Is Hard](https://www.internetingishard.com/html-and-css/semantic-html/).
 
 ## Table of contents
 
@@ -31,32 +31,69 @@ This is a solution to the [CSS Box Model tutorial No. 5 of HTML & CSS Is Hard](h
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This tutorial was actually very simple because of the way Interneting Is Hard introduced `<div>s` at the beginning.  Since we were already working with boxes within boxes within boxes, it made a lot of sense to then apply a specific tag name to each container to improve the semantics of the page.
 
-To see how you can add code snippets, see below:
+The semantic structures covered in this tutorial include:
+- headings (`<h1>` to `<h6>`)
+- article
+- section
+- nav
+- header
+- footer
+- aside
+- time
+- address
+- figure
+- figcaption
+
+Headings help create an outline for the document and `<article>` is for content that can be distributed to a search engine, an app like Flipboard, or another website.
+
+When working with sections, it's best to still define a page's outline with headings and use `<section>` as a container for layout purposes (like a more descriptive `<div>`).
+
+The `<header>` typically includes the website's name, logo, and main `<nav>`.  Here, there's one `<header>` for the website and another for the `<article>`.
+
+The `<footer>` generally includes copyright, footer `<nav>`, and author bios.  Once again, there's a `<footer>` for the `<article>` and one for the website.
+
+The `<aside>` is great for definitions, stats, and quotes inside an article.  Outside an article, it's great for making a sidebar.
+
+For a time of day or calendar date, use `<time>` tags with the `datetime` attribute.  You can include just the date (year-month-day) or also the time and timezone like so:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<time datetime="2017-1-3 15:00-0800">January 3rd</time>
 ```
+
+The `<address>` defines the author's contact info (NOT a physical address, though):
+
+```html
+<address>
+  Please contact <a href="mailto:troymcclure@example.com">Troy McClure</a> for questions about this article.
+</address>
+```
+Wrapping up the semantic elements, `<figure>` is often used for diagrams, illustrations, and code snippets.  Meanwhile, `<figcaption>` adds a visible description to an `<img>` element (remember that `alt` is a text replacement for screen readers or unloadable images).
+
+Finally, many global CSS stylesheets include the following code for legacy browsers that don't recognize HTML5 semantic elements (and tell them to behave like `<div>s`):
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+section, article, aside, footer, header, nav {
+  display: block;
 }
 ```
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Not surprisingly, this tutorial only touched the surface of semantic meaning.  Reaching closer to technical SEO, there are other resources like schema.org and other as listed in Useful Resources below that I'd like to explore in the future.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [HTML5 Outliner](https://gsnedders.html5.org/outliner/) - This is a neat tool for inspecting a page's outline.  There are 3 ways to submit the HTML.
+
+- [Schema.org Microdata](https://schema.org/docs/gs.html) - Want to change how you site appears in search engine results?  Go here.
+
+- [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started) - This one's for changing web page display in tweets.
+
+- [Open Graph Metadata](https://developers.facebook.com/docs/sharing/webmasters#markup) - And this one's for sharing on Facebook.
 
 ## Author
 
